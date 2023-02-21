@@ -81,6 +81,9 @@ test:
 #
 production:
   <<: *default
-  database: instachat_production
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  database: instachat_prod
   username: instachat
   password: <%= ENV["INSTACHAT_DATABASE_PASSWORD"] %>

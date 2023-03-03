@@ -3,8 +3,6 @@ class OnlineChannel < Turbo::StreamsChannel
 
   def subscribed
     super
-    stream_from "OnlineChannel"
-    stream_for current_user
     users_online = Kredis.unique_list "users_online"
     users_online << current_user.id
     Turbo::StreamsChannel.broadcast_append_to(

@@ -5,7 +5,8 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @room = Room.new
 
-    @users = User.find((Kredis.unique_list "users_online").elements)
+    users_online = Kredis.unique_list "users_online"
+    @users = User.find(users_online.elements)
   end
 
   def show

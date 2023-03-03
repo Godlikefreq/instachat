@@ -17,11 +17,9 @@ class User < ApplicationRecord
   end
 
   def set_online
-    Turbo::StreamsChannel.broadcast_append_to(
+    self&.broadcast_append_to(
       "online_users",
-      target: "users-list",
-      partial: "users/user",
-      locals: { user: self }
+      target: "users-list"
     )
   end
 

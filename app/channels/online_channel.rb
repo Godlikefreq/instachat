@@ -7,7 +7,7 @@ class OnlineChannel < Turbo::StreamsChannel
     stream_for current_user
     users_online = Kredis.unique_list "users_online"
     users_online << current_user.id
-    Turbo::StreamsChannel.broadcast_prepend_to(
+    Turbo::StreamsChannel.broadcast_append_to(
       verified_stream_name_from_params,
       target: "users-list",
       partial: "users/user",

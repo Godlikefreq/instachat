@@ -16,13 +16,6 @@ class User < ApplicationRecord
     Turbo::StreamsChannel.broadcast_remove_to("online_users", target: "user_#{self.id}")
   end
 
-  def set_online
-    self&.broadcast_append_to(
-      "online_users",
-      target: "users-list"
-    )
-  end
-
   private
 
   def generate_nickname

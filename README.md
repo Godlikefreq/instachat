@@ -2,7 +2,7 @@
 Fast chat to communicate with friends. No need to register, just open app, create room and invite friends!
 
 ## Setup
-1. Required Ruby (v. 3.1.2) & Rails (v. 7) installed on your PC.
+1. Required **Ruby** (*v. 3.1.2*) & **Rails** (*v. 7*) installed on your PC.
 2. Clone application to local PC:
 ```
 git clone git@github.com:Godlikefreq/instachat.git

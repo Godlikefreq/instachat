@@ -1,5 +1,5 @@
 # Description
-Fast chat to communicate with friends. No need to register, just open app, create room and invite friends!
+Fast chat application with live users tracking to communicate with friends. No need to register, just open app, create room and invite friends!
 
 ## Setup
 1. Required **Ruby** (*v. 3.1.2*) & **Rails** (*v. 7*) installed on your PC.

@@ -10,14 +10,25 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="<%= cookies[:theme] %>">
     <%= turbo_stream_from "online_users", channel: OnlineChannel %>
+
+    <div class="dropdown mx-2 mt-2">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Color Scheme
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="<%= set_theme_path(theme: "light") %>"><i class="bi bi-circle"></i> Light</a></li>
+        <li><a class="dropdown-item" href="<%= set_theme_path(theme: "dark") %>"><i class="bi bi-circle-fill"> Dark</i></a></li>
+        <li><a class="dropdown-item" href="<%= set_theme_path %>"><i class="bi bi-circle-half"></i> Auto</a></li>
+      </ul>
+    </div>
 
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-8">
           <div class="card text-center mt-4 mb-4">
-            <div class="card-body">
+            <div class="card-body rounded invite <%= cookies[:theme] %>">
               Welcome to Instatalk, <b><%= current_user.nickname %></b>!
             </div>
           </div>

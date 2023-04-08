@@ -1,0 +1,51 @@
+:root {
+  --light-bg-color: white;
+  --light-text-color: black;
+  --dark-bg-color: black;
+  --dark-text-color: white;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--dark-bg-color);
+    color: var(--dark-text-color);
+  }
+
+  body.light {
+    background: var(--light-bg-color);
+    color: var(--light-text-color);
+  }
+
+  div.invite {
+    background: var(--dark-bg-color);
+    color: var(--dark-text-color);
+  }
+
+  div.light {
+    background: var(--light-bg-color);
+    color: var(--light-text-color);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--light-bg-color);
+    color: var(--light-text-color);
+  }
+
+  body.dark {
+    background: var(--dark-bg-color);
+    color: var(--dark-text-color);
+  }
+
+  div.invite {
+    background: var(--light-bg-color);
+    color: var(--light-text-color);
+  }
+
+  div.dark {
+    background: var(--dark-bg-color);
+    color: var(--dark-text-color);
+  }
+}
